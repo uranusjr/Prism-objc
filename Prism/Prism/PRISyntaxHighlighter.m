@@ -97,9 +97,9 @@ NS_INLINE void PRIJSObjectSetPropertyString(
 @implementation PRISyntaxHighlighter
 {
     NSMutableDictionary *_aliases;
+    JSGlobalContextRef _context;
 }
 
-@synthesize context = _context;
 @synthesize languages = _languages;
 @synthesize themes = _themes;
 
@@ -180,7 +180,7 @@ NS_INLINE void PRIJSObjectSetPropertyString(
 - (NSString *)highlight:(NSString *)input asLanguage:(NSString *)lang
                   error:(NSError *__autoreleasing *)error
 {
-    JSContextRef ctx = self.context;
+    JSContextRef ctx = _context;
     JSObjectRef globalObject = JSContextGetGlobalObject(ctx);
 
     // Inject the current language to use.
@@ -231,13 +231,13 @@ NS_INLINE void PRIJSObjectSetPropertyString(
         return;
 
     JSStringRef js = JSStringCreateWithCFString((__bridge CFStringRef)code);
-    JSEvaluateScript(self.context, js, NULL, NULL, 0, NULL);
+    JSEvaluateScript(_context, js, NULL, NULL, 0, NULL);
     JSStringRelease(js);
 }
 
 - (void)initializePrism
 {
-    JSContextRef ctx = self.context;
+    JSContextRef ctx = _context;
     JSObjectRef globalObject = JSContextGetGlobalObject(ctx);
     JSValueRef value = PRIJSObjectGetProperty(ctx, globalObject, "components");
     NSDictionary *components = PRIObjectWithJavaScriptValue(ctx, value);

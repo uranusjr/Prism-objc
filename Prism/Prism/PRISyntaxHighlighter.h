@@ -20,8 +20,6 @@
 @property (copy, readonly) NSDictionary *themes;
 @property (copy, readonly) NSDictionary *aliases;
 
-@property (assign, readonly) JSGlobalContextRef context;
-
 - (void)addAlias:(NSString *)alias forName:(NSString *)target;
 - (void)addAliasesFromDictionary:(NSDictionary *)aliases;
 - (void)removeAlias:(NSString *)alias;
