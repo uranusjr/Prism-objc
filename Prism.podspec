@@ -30,6 +30,7 @@ Pod::Spec.new do |s|
   s.source = {
     :git => "https://github.com/uranusjr/Prism-objc.git",
     :tag => "v#{s.version}",
+    :submodules => true,
   }
 
   s.source_files  = "Prism/Prism/*.{h,m}"
