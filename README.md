@@ -55,6 +55,9 @@ Since the original Prism needs to be bundled with the main application, I don’
 
 * Support built-in Prism plugins.
 * Support external Prism plugins.
+* Travis CI.
+* Test Coverage.
+* Proper documentation.
 
 
 [Prism]: http://prismjs.com/
