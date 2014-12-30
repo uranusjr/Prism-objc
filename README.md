@@ -26,8 +26,8 @@ The main class is `PRISyntaxHighlighter`. It constructs Prism internally when `i
 
 The language names you pass into when you perform highlighting need to be one of the followings:
 
-1. A built-in definition returned by `-syntaxNames`.
-2. One of the language aliases returned by `-aliases`.
+1. A built-in definition that is a key of `-languages`.
+2. One of the language aliases that is a key of `-aliases`.
 
 You can add/remove aliases using `-addAlias:forName:`, `-addAliasesFromDictionary:`, and `-removeAlias:`. An alias should point to a built-in language name, or another alias.
 

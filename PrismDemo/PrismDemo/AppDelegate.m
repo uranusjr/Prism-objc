@@ -27,15 +27,15 @@
     if (!self)
         return nil;
 
-    self.highlighter =
-        [[PRISyntaxHighlighter alloc] initWithDefaultAliases:YES];
+    self.highlighter = [[PRISyntaxHighlighter alloc] init];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.selectedLanguage = [defaults objectForKey:@"selectedLanguage"];
     self.selectedTheme = [defaults objectForKey:@"selectedTheme"];
-    if (!self.selectedLanguage)
-        self.selectedLanguage = @"c";
-    if (!self.selectedTheme)
+    if (!self.selectedLanguage
+            || ![self.availableLanguages containsObject:self.selectedLanguage])
+        self.selectedLanguage = @"C";
+    if (!self.selectedTheme || !self.highlighter.themes[self.selectedTheme])
         self.selectedTheme = @"Default";
 
     [self addObserver:self forKeyPath:@"selectedLanguage"
@@ -54,33 +54,32 @@
 
 - (NSArray *)availableLanguages
 {
-    NSMutableSet *names = [self.highlighter.syntaxNames mutableCopy];
-    [names addObjectsFromArray:self.highlighter.aliases.allKeys];
-
-    NSSortDescriptor *sorter =
-        [NSSortDescriptor sortDescriptorWithKey:@"description" ascending:YES];
-    NSArray *allNames = [names sortedArrayUsingDescriptors:@[sorter]];
-    return allNames;
+    NSArray *names = self.highlighter.languages.allValues;
+    names = [names sortedArrayUsingSelector:@selector(localizedCompare:)];
+    return names;
 }
 
 - (NSArray *)themeNames
 {
     NSArray *names = self.highlighter.themes.allKeys;
-    names = [names sortedArrayUsingSelector:@selector(description)];
+    names = [names sortedArrayUsingSelector:@selector(localizedCompare:)];
     return names;
 }
 
 - (void)render
 {
+    NSArray *keys =
+        [self.highlighter.languages allKeysForObject:self.selectedLanguage];
+    NSAssert(keys.count > 0, @"What is this name?");
+    NSString *lang = [self.highlighter resolve:keys[0]];
+
     NSError *error = nil;
     NSString *rendered = [self.highlighter highlight:self.editor.string
-                                          asLanguage:self.selectedLanguage
-                                               error:&error];
+                                          asLanguage:lang error:&error];
     NSAssert(!error, @"This shall not fail!");
 
     NSURL *baseURL = [[NSBundle mainBundle] resourceURL];
     NSURL *CSSURL = self.highlighter.themes[self.selectedTheme];
-    NSString *lang = [self.highlighter resolve:self.selectedLanguage];
     NSString *html = (@"<!DOCTYPE html><html><head><meta charset=\"utf-8\">"
                       @"<link rel=\"stylesheet\" href=\"%@\"></head><body>"
                       @"<pre class=\"language-%@\"><code class=\"language-%@\">"

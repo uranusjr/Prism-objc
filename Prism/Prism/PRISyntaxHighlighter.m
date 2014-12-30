@@ -100,7 +100,7 @@ NS_INLINE void PRIJSObjectSetPropertyString(
 }
 
 @synthesize context = _context;
-@synthesize syntaxNames = _syntaxNames;
+@synthesize languages = _languages;
 @synthesize themes = _themes;
 
 + (NSDictionary *)defaultAliases
@@ -248,15 +248,15 @@ NS_INLINE void PRIJSObjectSetPropertyString(
 
     // Load languages into global context.
     NSDictionary *languages = components[@"languages"];
-    NSMutableSet *loadedLanguages = [NSMutableSet setWithObject:@"meta"];
+    NSMutableDictionary *loadedLanguages =
+        [NSMutableDictionary dictionaryWithObject:[NSNull null] forKey:@"meta"];
     for (NSString *name in languages)
     {
         [self loadLanguageWithName:name inDictionary:languages
                         dependency:loadedLanguages];
     }
-
-    [loadedLanguages removeObject:@"meta"];
-    _syntaxNames = [loadedLanguages copy];
+    [loadedLanguages removeObjectForKey:@"meta"];
+    _languages = [loadedLanguages copy];
 
     // Load theme information.
     NSDictionary *themeInfos = components[@"themes"];
@@ -289,9 +289,9 @@ NS_INLINE void PRIJSObjectSetPropertyString(
 }
 
 - (void)loadLanguageWithName:(NSString *)name inDictionary:(NSDictionary *)langs
-                  dependency:(NSMutableSet *)loaded
+                  dependency:(NSMutableDictionary *)loaded
 {
-    if ([loaded containsObject:name])
+    if (loaded[name])
         return;
 
     // Load dependencies first.
@@ -317,9 +317,8 @@ NS_INLINE void PRIJSObjectSetPropertyString(
         path = [pathMeta stringByReplacingOccurrencesOfString:@"{id}"
                                                    withString:filename];
         [self runFile:PRIGetResourceURL(path) error:NULL];
-        [loaded addObject:name];
     }
-    [loaded addObject:name];
+    loaded[name] = lang[@"title"];
 }
 
 @end

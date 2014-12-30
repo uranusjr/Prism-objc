@@ -16,7 +16,7 @@
 - (instancetype)init;
 - (void)dealloc;
 
-@property (copy, readonly) NSSet *syntaxNames;
+@property (copy, readonly) NSDictionary *languages;
 @property (copy, readonly) NSDictionary *themes;
 @property (copy, readonly) NSDictionary *aliases;
 
