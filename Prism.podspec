@@ -35,11 +35,11 @@ Pod::Spec.new do |s|
   s.source_files  = "Prism/Prism/*.{h,m}"
   s.public_header_files = "Prism/Prism/*.h"
 
-  s.resource_bundles = {
-    "prism" => [
+  s.resource_bundle = {
+    'Prism' => [
       "Prism/Dependency/prism/components.js",
       "Prism/Dependency/prism/components",
-      "Prism/Dependency/prism/",
+      "Prism/Dependency/prism/themes",
     ]
   }
 
