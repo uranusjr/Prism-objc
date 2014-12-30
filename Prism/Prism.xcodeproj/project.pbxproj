@@ -13,8 +13,9 @@
 		1F20B2821A515570005CA994 /* PRISyntaxHighlighter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F20B2801A515570005CA994 /* PRISyntaxHighlighter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F20B2831A515570005CA994 /* PRISyntaxHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F20B2811A515570005CA994 /* PRISyntaxHighlighter.m */; };
 		1F20B2891A515B12005CA994 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F20B2881A515B12005CA994 /* JavaScriptCore.framework */; };
-		1FF357961A515E3A00EB707E /* prism in Resources */ = {isa = PBXBuildFile; fileRef = 1F20B4491A515E13005CA994 /* prism */; };
-		1FF357971A519D6B00EB707E /* prism in Resources */ = {isa = PBXBuildFile; fileRef = 1F20B4491A515E13005CA994 /* prism */; };
+		1FF358061A52588D00EB707E /* components in Resources */ = {isa = PBXBuildFile; fileRef = 1FF358051A52588D00EB707E /* components */; };
+		1FF358081A52589800EB707E /* themes in Resources */ = {isa = PBXBuildFile; fileRef = 1FF358071A52589800EB707E /* themes */; };
+		1FF3580A1A52589F00EB707E /* components.js in Resources */ = {isa = PBXBuildFile; fileRef = 1FF358091A52589F00EB707E /* components.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,220 +38,9 @@
 		1F20B2801A515570005CA994 /* PRISyntaxHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRISyntaxHighlighter.h; sourceTree = "<group>"; };
 		1F20B2811A515570005CA994 /* PRISyntaxHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRISyntaxHighlighter.m; sourceTree = "<group>"; };
 		1F20B2881A515B12005CA994 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		1F20B28E1A515D9C005CA994 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		1F20B28F1A515D9C005CA994 /* .npmignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .npmignore; sourceTree = "<group>"; };
-		1F20B2901A515D9C005CA994 /* CNAME */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CNAME; sourceTree = "<group>"; };
-		1F20B2911A515D9C005CA994 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		1F20B2921A515D9C005CA994 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1F20B2931A515D9C005CA994 /* bower.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bower.json; sourceTree = "<group>"; };
-		1F20B2941A515D9C005CA994 /* code.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = code.js; sourceTree = "<group>"; };
-		1F20B2961A515D9C005CA994 /* prism-apacheconf.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-apacheconf.js"; sourceTree = "<group>"; };
-		1F20B2971A515D9C005CA994 /* prism-apacheconf.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-apacheconf.min.js"; sourceTree = "<group>"; };
-		1F20B2981A515D9C005CA994 /* prism-applescript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-applescript.js"; sourceTree = "<group>"; };
-		1F20B2991A515D9C005CA994 /* prism-applescript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-applescript.min.js"; sourceTree = "<group>"; };
-		1F20B29A1A515D9C005CA994 /* prism-aspnet.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-aspnet.js"; sourceTree = "<group>"; };
-		1F20B29B1A515D9C005CA994 /* prism-aspnet.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-aspnet.min.js"; sourceTree = "<group>"; };
-		1F20B29C1A515D9C005CA994 /* prism-autohotkey.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-autohotkey.js"; sourceTree = "<group>"; };
-		1F20B29D1A515D9C005CA994 /* prism-autohotkey.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-autohotkey.min.js"; sourceTree = "<group>"; };
-		1F20B29E1A515D9C005CA994 /* prism-bash.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-bash.js"; sourceTree = "<group>"; };
-		1F20B29F1A515D9C005CA994 /* prism-bash.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-bash.min.js"; sourceTree = "<group>"; };
-		1F20B2A01A515D9C005CA994 /* prism-c.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-c.js"; sourceTree = "<group>"; };
-		1F20B2A11A515D9C005CA994 /* prism-c.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-c.min.js"; sourceTree = "<group>"; };
-		1F20B2A21A515D9C005CA994 /* prism-clike.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-clike.js"; sourceTree = "<group>"; };
-		1F20B2A31A515D9C005CA994 /* prism-clike.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-clike.min.js"; sourceTree = "<group>"; };
-		1F20B2A41A515D9C005CA994 /* prism-coffeescript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-coffeescript.js"; sourceTree = "<group>"; };
-		1F20B2A51A515D9C005CA994 /* prism-coffeescript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-coffeescript.min.js"; sourceTree = "<group>"; };
-		1F20B2A61A515D9C005CA994 /* prism-core.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-core.js"; sourceTree = "<group>"; };
-		1F20B2A71A515D9C005CA994 /* prism-core.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-core.min.js"; sourceTree = "<group>"; };
-		1F20B2A81A515D9C005CA994 /* prism-cpp.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-cpp.js"; sourceTree = "<group>"; };
-		1F20B2A91A515D9C005CA994 /* prism-cpp.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-cpp.min.js"; sourceTree = "<group>"; };
-		1F20B2AA1A515D9C005CA994 /* prism-csharp.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-csharp.js"; sourceTree = "<group>"; };
-		1F20B2AB1A515D9C005CA994 /* prism-csharp.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-csharp.min.js"; sourceTree = "<group>"; };
-		1F20B2AC1A515D9C005CA994 /* prism-css-extras.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-css-extras.js"; sourceTree = "<group>"; };
-		1F20B2AD1A515D9C005CA994 /* prism-css-extras.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-css-extras.min.js"; sourceTree = "<group>"; };
-		1F20B2AE1A515D9C005CA994 /* prism-css.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-css.js"; sourceTree = "<group>"; };
-		1F20B2AF1A515D9C005CA994 /* prism-css.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-css.min.js"; sourceTree = "<group>"; };
-		1F20B2B01A515D9C005CA994 /* prism-dart.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-dart.js"; sourceTree = "<group>"; };
-		1F20B2B11A515D9C005CA994 /* prism-dart.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-dart.min.js"; sourceTree = "<group>"; };
-		1F20B2B21A515D9C005CA994 /* prism-eiffel.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-eiffel.js"; sourceTree = "<group>"; };
-		1F20B2B31A515D9C005CA994 /* prism-eiffel.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-eiffel.min.js"; sourceTree = "<group>"; };
-		1F20B2B41A515D9C005CA994 /* prism-erlang.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-erlang.js"; sourceTree = "<group>"; };
-		1F20B2B51A515D9C005CA994 /* prism-erlang.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-erlang.min.js"; sourceTree = "<group>"; };
-		1F20B2B61A515D9C005CA994 /* prism-fortran.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-fortran.js"; sourceTree = "<group>"; };
-		1F20B2B71A515D9C005CA994 /* prism-fortran.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-fortran.min.js"; sourceTree = "<group>"; };
-		1F20B2B81A515D9C005CA994 /* prism-gherkin.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-gherkin.js"; sourceTree = "<group>"; };
-		1F20B2B91A515D9C005CA994 /* prism-gherkin.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-gherkin.min.js"; sourceTree = "<group>"; };
-		1F20B2BA1A515D9C005CA994 /* prism-git.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-git.js"; sourceTree = "<group>"; };
-		1F20B2BB1A515D9C005CA994 /* prism-git.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-git.min.js"; sourceTree = "<group>"; };
-		1F20B2BC1A515D9C005CA994 /* prism-go.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-go.js"; sourceTree = "<group>"; };
-		1F20B2BD1A515D9C005CA994 /* prism-go.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-go.min.js"; sourceTree = "<group>"; };
-		1F20B2BE1A515D9C005CA994 /* prism-groovy.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-groovy.js"; sourceTree = "<group>"; };
-		1F20B2BF1A515D9C005CA994 /* prism-groovy.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-groovy.min.js"; sourceTree = "<group>"; };
-		1F20B2C01A515D9C005CA994 /* prism-haml.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-haml.js"; sourceTree = "<group>"; };
-		1F20B2C11A515D9C005CA994 /* prism-haml.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-haml.min.js"; sourceTree = "<group>"; };
-		1F20B2C21A515D9C005CA994 /* prism-handlebars.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-handlebars.js"; sourceTree = "<group>"; };
-		1F20B2C31A515D9C005CA994 /* prism-handlebars.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-handlebars.min.js"; sourceTree = "<group>"; };
-		1F20B2C41A515D9C005CA994 /* prism-haskell.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-haskell.js"; sourceTree = "<group>"; };
-		1F20B2C51A515D9C005CA994 /* prism-haskell.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-haskell.min.js"; sourceTree = "<group>"; };
-		1F20B2C61A515D9C005CA994 /* prism-http.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-http.js"; sourceTree = "<group>"; };
-		1F20B2C71A515D9C005CA994 /* prism-http.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-http.min.js"; sourceTree = "<group>"; };
-		1F20B2C81A515D9C005CA994 /* prism-ini.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-ini.js"; sourceTree = "<group>"; };
-		1F20B2C91A515D9C005CA994 /* prism-ini.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-ini.min.js"; sourceTree = "<group>"; };
-		1F20B2CA1A515D9C005CA994 /* prism-jade.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-jade.js"; sourceTree = "<group>"; };
-		1F20B2CB1A515D9C005CA994 /* prism-jade.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-jade.min.js"; sourceTree = "<group>"; };
-		1F20B2CC1A515D9C005CA994 /* prism-java.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-java.js"; sourceTree = "<group>"; };
-		1F20B2CD1A515D9C005CA994 /* prism-java.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-java.min.js"; sourceTree = "<group>"; };
-		1F20B2CE1A515D9C005CA994 /* prism-javascript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-javascript.js"; sourceTree = "<group>"; };
-		1F20B2CF1A515D9C005CA994 /* prism-javascript.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-javascript.min.js"; sourceTree = "<group>"; };
-		1F20B2D01A515D9C005CA994 /* prism-latex.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-latex.js"; sourceTree = "<group>"; };
-		1F20B2D11A515D9C005CA994 /* prism-latex.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-latex.min.js"; sourceTree = "<group>"; };
-		1F20B2D21A515D9C005CA994 /* prism-less.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-less.js"; sourceTree = "<group>"; };
-		1F20B2D31A515D9C005CA994 /* prism-less.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-less.min.js"; sourceTree = "<group>"; };
-		1F20B2D41A515D9C005CA994 /* prism-lolcode.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-lolcode.js"; sourceTree = "<group>"; };
-		1F20B2D51A515D9C005CA994 /* prism-lolcode.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-lolcode.min.js"; sourceTree = "<group>"; };
-		1F20B2D61A515D9C005CA994 /* prism-markup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-markup.js"; sourceTree = "<group>"; };
-		1F20B2D71A515D9C005CA994 /* prism-markup.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-markup.min.js"; sourceTree = "<group>"; };
-		1F20B2D81A515D9C005CA994 /* prism-matlab.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-matlab.js"; sourceTree = "<group>"; };
-		1F20B2D91A515D9C005CA994 /* prism-matlab.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-matlab.min.js"; sourceTree = "<group>"; };
-		1F20B2DA1A515D9C005CA994 /* prism-nasm.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-nasm.js"; sourceTree = "<group>"; };
-		1F20B2DB1A515D9C005CA994 /* prism-nasm.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-nasm.min.js"; sourceTree = "<group>"; };
-		1F20B2DC1A515D9C005CA994 /* prism-nsis.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-nsis.js"; sourceTree = "<group>"; };
-		1F20B2DD1A515D9C005CA994 /* prism-nsis.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-nsis.min.js"; sourceTree = "<group>"; };
-		1F20B2DE1A515D9C005CA994 /* prism-objectivec.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-objectivec.js"; sourceTree = "<group>"; };
-		1F20B2DF1A515D9C005CA994 /* prism-objectivec.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-objectivec.min.js"; sourceTree = "<group>"; };
-		1F20B2E01A515D9C005CA994 /* prism-pascal.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-pascal.js"; sourceTree = "<group>"; };
-		1F20B2E11A515D9C005CA994 /* prism-pascal.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-pascal.min.js"; sourceTree = "<group>"; };
-		1F20B2E21A515D9C005CA994 /* prism-perl.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-perl.js"; sourceTree = "<group>"; };
-		1F20B2E31A515D9C005CA994 /* prism-perl.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-perl.min.js"; sourceTree = "<group>"; };
-		1F20B2E41A515D9C005CA994 /* prism-php-extras.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-php-extras.js"; sourceTree = "<group>"; };
-		1F20B2E51A515D9C005CA994 /* prism-php-extras.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-php-extras.min.js"; sourceTree = "<group>"; };
-		1F20B2E61A515D9C005CA994 /* prism-php.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-php.js"; sourceTree = "<group>"; };
-		1F20B2E71A515D9C005CA994 /* prism-php.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-php.min.js"; sourceTree = "<group>"; };
-		1F20B2E81A515D9C005CA994 /* prism-python.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-python.js"; sourceTree = "<group>"; };
-		1F20B2E91A515D9C005CA994 /* prism-python.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-python.min.js"; sourceTree = "<group>"; };
-		1F20B2EA1A515D9C005CA994 /* prism-r.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-r.js"; sourceTree = "<group>"; };
-		1F20B2EB1A515D9C005CA994 /* prism-r.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-r.min.js"; sourceTree = "<group>"; };
-		1F20B2EC1A515D9C005CA994 /* prism-rip.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-rip.js"; sourceTree = "<group>"; };
-		1F20B2ED1A515D9C005CA994 /* prism-rip.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-rip.min.js"; sourceTree = "<group>"; };
-		1F20B2EE1A515D9C005CA994 /* prism-ruby.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-ruby.js"; sourceTree = "<group>"; };
-		1F20B2EF1A515D9C005CA994 /* prism-ruby.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-ruby.min.js"; sourceTree = "<group>"; };
-		1F20B2F01A515D9C005CA994 /* prism-rust.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-rust.js"; sourceTree = "<group>"; };
-		1F20B2F11A515D9C005CA994 /* prism-rust.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-rust.min.js"; sourceTree = "<group>"; };
-		1F20B2F21A515D9C005CA994 /* prism-scala.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-scala.js"; sourceTree = "<group>"; };
-		1F20B2F31A515D9C005CA994 /* prism-scala.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-scala.min.js"; sourceTree = "<group>"; };
-		1F20B2F41A515D9C005CA994 /* prism-scheme.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-scheme.js"; sourceTree = "<group>"; };
-		1F20B2F51A515D9C005CA994 /* prism-scheme.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-scheme.min.js"; sourceTree = "<group>"; };
-		1F20B2F61A515D9C005CA994 /* prism-scss.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-scss.js"; sourceTree = "<group>"; };
-		1F20B2F71A515D9C005CA994 /* prism-scss.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-scss.min.js"; sourceTree = "<group>"; };
-		1F20B2F81A515D9C005CA994 /* prism-sql.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-sql.js"; sourceTree = "<group>"; };
-		1F20B2F91A515D9C005CA994 /* prism-sql.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-sql.min.js"; sourceTree = "<group>"; };
-		1F20B2FA1A515D9C005CA994 /* prism-swift.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-swift.js"; sourceTree = "<group>"; };
-		1F20B2FB1A515D9C005CA994 /* prism-swift.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-swift.min.js"; sourceTree = "<group>"; };
-		1F20B2FC1A515D9C005CA994 /* prism-twig.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-twig.js"; sourceTree = "<group>"; };
-		1F20B2FD1A515D9C005CA994 /* prism-twig.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-twig.min.js"; sourceTree = "<group>"; };
-		1F20B2FE1A515D9C005CA994 /* components.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = components.js; sourceTree = "<group>"; };
-		1F20B2FF1A515D9C005CA994 /* download.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = download.html; sourceTree = "<group>"; };
-		1F20B3001A515D9C005CA994 /* download.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = download.js; sourceTree = "<group>"; };
-		1F20B3021A515D9C005CA994 /* prism-apacheconf.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-apacheconf.html"; sourceTree = "<group>"; };
-		1F20B3031A515D9C005CA994 /* prism-applescript.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-applescript.html"; sourceTree = "<group>"; };
-		1F20B3041A515D9C005CA994 /* prism-aspnet.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-aspnet.html"; sourceTree = "<group>"; };
-		1F20B3051A515D9C005CA994 /* prism-bash.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-bash.html"; sourceTree = "<group>"; };
-		1F20B3061A515D9C005CA994 /* prism-c.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-c.html"; sourceTree = "<group>"; };
-		1F20B3071A515D9C005CA994 /* prism-coffeescript.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-coffeescript.html"; sourceTree = "<group>"; };
-		1F20B3081A515D9C005CA994 /* prism-cpp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-cpp.html"; sourceTree = "<group>"; };
-		1F20B3091A515D9C005CA994 /* prism-css.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-css.html"; sourceTree = "<group>"; };
-		1F20B30A1A515D9C005CA994 /* prism-dart.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-dart.html"; sourceTree = "<group>"; };
-		1F20B30B1A515D9C005CA994 /* prism-erlang.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-erlang.html"; sourceTree = "<group>"; };
-		1F20B30C1A515D9C005CA994 /* prism-fortran.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-fortran.html"; sourceTree = "<group>"; };
-		1F20B30D1A515D9C005CA994 /* prism-git.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-git.html"; sourceTree = "<group>"; };
-		1F20B30E1A515D9C005CA994 /* prism-go.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-go.html"; sourceTree = "<group>"; };
-		1F20B30F1A515D9C005CA994 /* prism-haml.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-haml.html"; sourceTree = "<group>"; };
-		1F20B3101A515D9C005CA994 /* prism-handlebars.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-handlebars.html"; sourceTree = "<group>"; };
-		1F20B3111A515D9C005CA994 /* prism-http.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-http.html"; sourceTree = "<group>"; };
-		1F20B3121A515D9C005CA994 /* prism-ini.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-ini.html"; sourceTree = "<group>"; };
-		1F20B3131A515D9C005CA994 /* prism-jade.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-jade.html"; sourceTree = "<group>"; };
-		1F20B3141A515D9C005CA994 /* prism-javascript.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-javascript.html"; sourceTree = "<group>"; };
-		1F20B3151A515D9C005CA994 /* prism-latex.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-latex.html"; sourceTree = "<group>"; };
-		1F20B3161A515D9C005CA994 /* prism-less.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-less.html"; sourceTree = "<group>"; };
-		1F20B3171A515D9C005CA994 /* prism-lolcode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-lolcode.html"; sourceTree = "<group>"; };
-		1F20B3181A515D9C005CA994 /* prism-markup.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-markup.html"; sourceTree = "<group>"; };
-		1F20B3191A515D9C005CA994 /* prism-matlab.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-matlab.html"; sourceTree = "<group>"; };
-		1F20B31A1A515D9C005CA994 /* prism-perl.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-perl.html"; sourceTree = "<group>"; };
-		1F20B31B1A515D9C005CA994 /* prism-php.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-php.html"; sourceTree = "<group>"; };
-		1F20B31C1A515D9C005CA994 /* prism-python.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-python.html"; sourceTree = "<group>"; };
-		1F20B31D1A515D9C005CA994 /* prism-ruby.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-ruby.html"; sourceTree = "<group>"; };
-		1F20B31E1A515D9C005CA994 /* prism-rust.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-rust.html"; sourceTree = "<group>"; };
-		1F20B31F1A515D9C005CA994 /* prism-scheme.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-scheme.html"; sourceTree = "<group>"; };
-		1F20B3201A515D9C005CA994 /* prism-sql.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-sql.html"; sourceTree = "<group>"; };
-		1F20B3211A515D9C005CA994 /* prism-swift.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-swift.html"; sourceTree = "<group>"; };
-		1F20B3221A515D9C005CA994 /* prism-twig.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "prism-twig.html"; sourceTree = "<group>"; };
-		1F20B3231A515D9C005CA994 /* examples.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = examples.html; sourceTree = "<group>"; };
-		1F20B3241A515D9C005CA994 /* examples.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = examples.js; sourceTree = "<group>"; };
-		1F20B3251A515D9C005CA994 /* extending.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = extending.html; sourceTree = "<group>"; };
-		1F20B3261A515D9C005CA994 /* faq.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = faq.html; sourceTree = "<group>"; };
-		1F20B3271A515D9C005CA994 /* favicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favicon.png; sourceTree = "<group>"; };
-		1F20B3281A515D9C005CA994 /* gulpfile.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = gulpfile.js; sourceTree = "<group>"; };
-		1F20B32A1A515D9C005CA994 /* logo-ala.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-ala.png"; sourceTree = "<group>"; };
-		1F20B32B1A515D9C005CA994 /* logo-css-tricks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-css-tricks.png"; sourceTree = "<group>"; };
-		1F20B32C1A515D9C005CA994 /* logo-mdn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-mdn.png"; sourceTree = "<group>"; };
-		1F20B32D1A515D9C005CA994 /* logo-smashing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-smashing.png"; sourceTree = "<group>"; };
-		1F20B32E1A515D9C005CA994 /* logo-typeplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-typeplate.png"; sourceTree = "<group>"; };
-		1F20B32F1A515D9C005CA994 /* logo-wpd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-wpd.png"; sourceTree = "<group>"; };
-		1F20B3301A515D9C005CA994 /* spectrum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spectrum.png; sourceTree = "<group>"; };
-		1F20B3311A515D9C005CA994 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		1F20B3321A515D9C005CA994 /* logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = logo.svg; sourceTree = "<group>"; };
-		1F20B3331A515D9C005CA994 /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
-		1F20B3361A515D9C005CA994 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		1F20B3371A515D9C005CA994 /* prism-autolinker.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-autolinker.css"; sourceTree = "<group>"; };
-		1F20B3381A515D9C005CA994 /* prism-autolinker.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-autolinker.js"; sourceTree = "<group>"; };
-		1F20B3391A515D9C005CA994 /* prism-autolinker.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-autolinker.min.js"; sourceTree = "<group>"; };
-		1F20B33B1A515D9C005CA994 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		1F20B33C1A515D9C005CA994 /* prism-file-highlight.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-file-highlight.js"; sourceTree = "<group>"; };
-		1F20B33D1A515D9C005CA994 /* prism-file-highlight.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-file-highlight.min.js"; sourceTree = "<group>"; };
-		1F20B33F1A515D9C005CA994 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		1F20B3401A515D9C005CA994 /* prism-ie8.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-ie8.css"; sourceTree = "<group>"; };
-		1F20B3411A515D9C005CA994 /* prism-ie8.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-ie8.js"; sourceTree = "<group>"; };
-		1F20B3421A515D9C005CA994 /* prism-ie8.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-ie8.min.js"; sourceTree = "<group>"; };
-		1F20B3431A515D9C005CA994 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		1F20B3451A515D9C005CA994 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		1F20B3461A515D9C005CA994 /* prism-line-highlight.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-line-highlight.css"; sourceTree = "<group>"; };
-		1F20B3471A515D9C005CA994 /* prism-line-highlight.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-line-highlight.js"; sourceTree = "<group>"; };
-		1F20B3481A515D9C005CA994 /* prism-line-highlight.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-line-highlight.min.js"; sourceTree = "<group>"; };
-		1F20B34A1A515D9C005CA994 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		1F20B34B1A515D9C005CA994 /* prism-line-numbers.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-line-numbers.css"; sourceTree = "<group>"; };
-		1F20B34C1A515D9C005CA994 /* prism-line-numbers.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-line-numbers.js"; sourceTree = "<group>"; };
-		1F20B34D1A515D9C005CA994 /* prism-line-numbers.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-line-numbers.min.js"; sourceTree = "<group>"; };
-		1F20B34F1A515D9C005CA994 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		1F20B3501A515D9C005CA994 /* prism-show-invisibles.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-show-invisibles.css"; sourceTree = "<group>"; };
-		1F20B3511A515D9C005CA994 /* prism-show-invisibles.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-show-invisibles.js"; sourceTree = "<group>"; };
-		1F20B3521A515D9C005CA994 /* prism-show-invisibles.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-show-invisibles.min.js"; sourceTree = "<group>"; };
-		1F20B3541A515D9C005CA994 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		1F20B3551A515D9C005CA994 /* prism-show-language.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-show-language.css"; sourceTree = "<group>"; };
-		1F20B3561A515D9C005CA994 /* prism-show-language.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-show-language.js"; sourceTree = "<group>"; };
-		1F20B3571A515D9C005CA994 /* prism-show-language.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-show-language.min.css"; sourceTree = "<group>"; };
-		1F20B3581A515D9C005CA994 /* prism-show-language.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-show-language.min.js"; sourceTree = "<group>"; };
-		1F20B35A1A515D9C005CA994 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		1F20B35B1A515D9C005CA994 /* prism-wpd.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-wpd.css"; sourceTree = "<group>"; };
-		1F20B35C1A515D9C005CA994 /* prism-wpd.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-wpd.js"; sourceTree = "<group>"; };
-		1F20B35D1A515D9C005CA994 /* prism-wpd.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prism-wpd.min.js"; sourceTree = "<group>"; };
-		1F20B35E1A515D9D005CA994 /* prefixfree.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = prefixfree.min.js; sourceTree = "<group>"; };
-		1F20B35F1A515D9D005CA994 /* prism.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = prism.js; sourceTree = "<group>"; };
-		1F20B3601A515D9D005CA994 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
-		1F20B3621A515D9D005CA994 /* footer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = footer.html; sourceTree = "<group>"; };
-		1F20B3631A515D9D005CA994 /* header-download.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "header-download.html"; sourceTree = "<group>"; };
-		1F20B3641A515D9D005CA994 /* header-main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "header-main.html"; sourceTree = "<group>"; };
-		1F20B3651A515D9D005CA994 /* header-plugins.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "header-plugins.html"; sourceTree = "<group>"; };
-		1F20B3661A515D9D005CA994 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
-		1F20B3681A515D9D005CA994 /* prism-coy.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-coy.css"; sourceTree = "<group>"; };
-		1F20B3691A515D9D005CA994 /* prism-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-dark.css"; sourceTree = "<group>"; };
-		1F20B36A1A515D9D005CA994 /* prism-funky.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-funky.css"; sourceTree = "<group>"; };
-		1F20B36B1A515D9D005CA994 /* prism-okaidia.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-okaidia.css"; sourceTree = "<group>"; };
-		1F20B36C1A515D9D005CA994 /* prism-tomorrow.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-tomorrow.css"; sourceTree = "<group>"; };
-		1F20B36D1A515D9D005CA994 /* prism-twilight.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "prism-twilight.css"; sourceTree = "<group>"; };
-		1F20B36E1A515D9D005CA994 /* prism.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = prism.css; sourceTree = "<group>"; };
-		1F20B36F1A515D9D005CA994 /* utopia.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = utopia.js; sourceTree = "<group>"; };
-		1F20B3711A515D9D005CA994 /* promise.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = promise.js; sourceTree = "<group>"; };
-		1F20B4491A515E13005CA994 /* prism */ = {isa = PBXFileReference; lastKnownFileType = folder; path = prism; sourceTree = "<group>"; };
+		1FF358051A52588D00EB707E /* components */ = {isa = PBXFileReference; lastKnownFileType = folder; name = components; path = Dependency/prism/components; sourceTree = SOURCE_ROOT; };
+		1FF358071A52589800EB707E /* themes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = themes; path = Dependency/prism/themes; sourceTree = SOURCE_ROOT; };
+		1FF358091A52589F00EB707E /* components.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = components.js; path = Dependency/prism/components.js; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,7 +66,6 @@
 		1F20B25A1A51551D005CA994 = {
 			isa = PBXGroup;
 			children = (
-				1F20B28C1A515D9C005CA994 /* Dependency */,
 				1F20B2661A51551D005CA994 /* Prism */,
 				1F20B2731A51551D005CA994 /* PrismTests */,
 				1F20B2651A51551D005CA994 /* Products */,
@@ -307,7 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				1F20B2681A51551D005CA994 /* Info.plist */,
-				1F20B4491A515E13005CA994 /* prism */,
+				1FF358091A52589F00EB707E /* components.js */,
+				1FF358051A52588D00EB707E /* components */,
+				1FF358071A52589800EB707E /* themes */,
 				1F20B2881A515B12005CA994 /* JavaScriptCore.framework */,
 			);
 			name = "Supporting Files";
@@ -328,354 +119,6 @@
 				1F20B2751A51551D005CA994 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		1F20B28C1A515D9C005CA994 /* Dependency */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B28D1A515D9C005CA994 /* prism */,
-			);
-			path = Dependency;
-			sourceTree = "<group>";
-		};
-		1F20B28D1A515D9C005CA994 /* prism */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B28E1A515D9C005CA994 /* .gitignore */,
-				1F20B28F1A515D9C005CA994 /* .npmignore */,
-				1F20B2901A515D9C005CA994 /* CNAME */,
-				1F20B2911A515D9C005CA994 /* LICENSE */,
-				1F20B2921A515D9C005CA994 /* README.md */,
-				1F20B2931A515D9C005CA994 /* bower.json */,
-				1F20B2941A515D9C005CA994 /* code.js */,
-				1F20B2951A515D9C005CA994 /* components */,
-				1F20B2FE1A515D9C005CA994 /* components.js */,
-				1F20B2FF1A515D9C005CA994 /* download.html */,
-				1F20B3001A515D9C005CA994 /* download.js */,
-				1F20B3011A515D9C005CA994 /* examples */,
-				1F20B3231A515D9C005CA994 /* examples.html */,
-				1F20B3241A515D9C005CA994 /* examples.js */,
-				1F20B3251A515D9C005CA994 /* extending.html */,
-				1F20B3261A515D9C005CA994 /* faq.html */,
-				1F20B3271A515D9C005CA994 /* favicon.png */,
-				1F20B3281A515D9C005CA994 /* gulpfile.js */,
-				1F20B3291A515D9C005CA994 /* img */,
-				1F20B3311A515D9C005CA994 /* index.html */,
-				1F20B3321A515D9C005CA994 /* logo.svg */,
-				1F20B3331A515D9C005CA994 /* package.json */,
-				1F20B3341A515D9C005CA994 /* plugins */,
-				1F20B35E1A515D9D005CA994 /* prefixfree.min.js */,
-				1F20B35F1A515D9D005CA994 /* prism.js */,
-				1F20B3601A515D9D005CA994 /* style.css */,
-				1F20B3611A515D9D005CA994 /* templates */,
-				1F20B3661A515D9D005CA994 /* test.html */,
-				1F20B3671A515D9D005CA994 /* themes */,
-				1F20B36F1A515D9D005CA994 /* utopia.js */,
-				1F20B3701A515D9D005CA994 /* vendor */,
-			);
-			path = prism;
-			sourceTree = "<group>";
-		};
-		1F20B2951A515D9C005CA994 /* components */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B2961A515D9C005CA994 /* prism-apacheconf.js */,
-				1F20B2971A515D9C005CA994 /* prism-apacheconf.min.js */,
-				1F20B2981A515D9C005CA994 /* prism-applescript.js */,
-				1F20B2991A515D9C005CA994 /* prism-applescript.min.js */,
-				1F20B29A1A515D9C005CA994 /* prism-aspnet.js */,
-				1F20B29B1A515D9C005CA994 /* prism-aspnet.min.js */,
-				1F20B29C1A515D9C005CA994 /* prism-autohotkey.js */,
-				1F20B29D1A515D9C005CA994 /* prism-autohotkey.min.js */,
-				1F20B29E1A515D9C005CA994 /* prism-bash.js */,
-				1F20B29F1A515D9C005CA994 /* prism-bash.min.js */,
-				1F20B2A01A515D9C005CA994 /* prism-c.js */,
-				1F20B2A11A515D9C005CA994 /* prism-c.min.js */,
-				1F20B2A21A515D9C005CA994 /* prism-clike.js */,
-				1F20B2A31A515D9C005CA994 /* prism-clike.min.js */,
-				1F20B2A41A515D9C005CA994 /* prism-coffeescript.js */,
-				1F20B2A51A515D9C005CA994 /* prism-coffeescript.min.js */,
-				1F20B2A61A515D9C005CA994 /* prism-core.js */,
-				1F20B2A71A515D9C005CA994 /* prism-core.min.js */,
-				1F20B2A81A515D9C005CA994 /* prism-cpp.js */,
-				1F20B2A91A515D9C005CA994 /* prism-cpp.min.js */,
-				1F20B2AA1A515D9C005CA994 /* prism-csharp.js */,
-				1F20B2AB1A515D9C005CA994 /* prism-csharp.min.js */,
-				1F20B2AC1A515D9C005CA994 /* prism-css-extras.js */,
-				1F20B2AD1A515D9C005CA994 /* prism-css-extras.min.js */,
-				1F20B2AE1A515D9C005CA994 /* prism-css.js */,
-				1F20B2AF1A515D9C005CA994 /* prism-css.min.js */,
-				1F20B2B01A515D9C005CA994 /* prism-dart.js */,
-				1F20B2B11A515D9C005CA994 /* prism-dart.min.js */,
-				1F20B2B21A515D9C005CA994 /* prism-eiffel.js */,
-				1F20B2B31A515D9C005CA994 /* prism-eiffel.min.js */,
-				1F20B2B41A515D9C005CA994 /* prism-erlang.js */,
-				1F20B2B51A515D9C005CA994 /* prism-erlang.min.js */,
-				1F20B2B61A515D9C005CA994 /* prism-fortran.js */,
-				1F20B2B71A515D9C005CA994 /* prism-fortran.min.js */,
-				1F20B2B81A515D9C005CA994 /* prism-gherkin.js */,
-				1F20B2B91A515D9C005CA994 /* prism-gherkin.min.js */,
-				1F20B2BA1A515D9C005CA994 /* prism-git.js */,
-				1F20B2BB1A515D9C005CA994 /* prism-git.min.js */,
-				1F20B2BC1A515D9C005CA994 /* prism-go.js */,
-				1F20B2BD1A515D9C005CA994 /* prism-go.min.js */,
-				1F20B2BE1A515D9C005CA994 /* prism-groovy.js */,
-				1F20B2BF1A515D9C005CA994 /* prism-groovy.min.js */,
-				1F20B2C01A515D9C005CA994 /* prism-haml.js */,
-				1F20B2C11A515D9C005CA994 /* prism-haml.min.js */,
-				1F20B2C21A515D9C005CA994 /* prism-handlebars.js */,
-				1F20B2C31A515D9C005CA994 /* prism-handlebars.min.js */,
-				1F20B2C41A515D9C005CA994 /* prism-haskell.js */,
-				1F20B2C51A515D9C005CA994 /* prism-haskell.min.js */,
-				1F20B2C61A515D9C005CA994 /* prism-http.js */,
-				1F20B2C71A515D9C005CA994 /* prism-http.min.js */,
-				1F20B2C81A515D9C005CA994 /* prism-ini.js */,
-				1F20B2C91A515D9C005CA994 /* prism-ini.min.js */,
-				1F20B2CA1A515D9C005CA994 /* prism-jade.js */,
-				1F20B2CB1A515D9C005CA994 /* prism-jade.min.js */,
-				1F20B2CC1A515D9C005CA994 /* prism-java.js */,
-				1F20B2CD1A515D9C005CA994 /* prism-java.min.js */,
-				1F20B2CE1A515D9C005CA994 /* prism-javascript.js */,
-				1F20B2CF1A515D9C005CA994 /* prism-javascript.min.js */,
-				1F20B2D01A515D9C005CA994 /* prism-latex.js */,
-				1F20B2D11A515D9C005CA994 /* prism-latex.min.js */,
-				1F20B2D21A515D9C005CA994 /* prism-less.js */,
-				1F20B2D31A515D9C005CA994 /* prism-less.min.js */,
-				1F20B2D41A515D9C005CA994 /* prism-lolcode.js */,
-				1F20B2D51A515D9C005CA994 /* prism-lolcode.min.js */,
-				1F20B2D61A515D9C005CA994 /* prism-markup.js */,
-				1F20B2D71A515D9C005CA994 /* prism-markup.min.js */,
-				1F20B2D81A515D9C005CA994 /* prism-matlab.js */,
-				1F20B2D91A515D9C005CA994 /* prism-matlab.min.js */,
-				1F20B2DA1A515D9C005CA994 /* prism-nasm.js */,
-				1F20B2DB1A515D9C005CA994 /* prism-nasm.min.js */,
-				1F20B2DC1A515D9C005CA994 /* prism-nsis.js */,
-				1F20B2DD1A515D9C005CA994 /* prism-nsis.min.js */,
-				1F20B2DE1A515D9C005CA994 /* prism-objectivec.js */,
-				1F20B2DF1A515D9C005CA994 /* prism-objectivec.min.js */,
-				1F20B2E01A515D9C005CA994 /* prism-pascal.js */,
-				1F20B2E11A515D9C005CA994 /* prism-pascal.min.js */,
-				1F20B2E21A515D9C005CA994 /* prism-perl.js */,
-				1F20B2E31A515D9C005CA994 /* prism-perl.min.js */,
-				1F20B2E41A515D9C005CA994 /* prism-php-extras.js */,
-				1F20B2E51A515D9C005CA994 /* prism-php-extras.min.js */,
-				1F20B2E61A515D9C005CA994 /* prism-php.js */,
-				1F20B2E71A515D9C005CA994 /* prism-php.min.js */,
-				1F20B2E81A515D9C005CA994 /* prism-python.js */,
-				1F20B2E91A515D9C005CA994 /* prism-python.min.js */,
-				1F20B2EA1A515D9C005CA994 /* prism-r.js */,
-				1F20B2EB1A515D9C005CA994 /* prism-r.min.js */,
-				1F20B2EC1A515D9C005CA994 /* prism-rip.js */,
-				1F20B2ED1A515D9C005CA994 /* prism-rip.min.js */,
-				1F20B2EE1A515D9C005CA994 /* prism-ruby.js */,
-				1F20B2EF1A515D9C005CA994 /* prism-ruby.min.js */,
-				1F20B2F01A515D9C005CA994 /* prism-rust.js */,
-				1F20B2F11A515D9C005CA994 /* prism-rust.min.js */,
-				1F20B2F21A515D9C005CA994 /* prism-scala.js */,
-				1F20B2F31A515D9C005CA994 /* prism-scala.min.js */,
-				1F20B2F41A515D9C005CA994 /* prism-scheme.js */,
-				1F20B2F51A515D9C005CA994 /* prism-scheme.min.js */,
-				1F20B2F61A515D9C005CA994 /* prism-scss.js */,
-				1F20B2F71A515D9C005CA994 /* prism-scss.min.js */,
-				1F20B2F81A515D9C005CA994 /* prism-sql.js */,
-				1F20B2F91A515D9C005CA994 /* prism-sql.min.js */,
-				1F20B2FA1A515D9C005CA994 /* prism-swift.js */,
-				1F20B2FB1A515D9C005CA994 /* prism-swift.min.js */,
-				1F20B2FC1A515D9C005CA994 /* prism-twig.js */,
-				1F20B2FD1A515D9C005CA994 /* prism-twig.min.js */,
-			);
-			path = components;
-			sourceTree = "<group>";
-		};
-		1F20B3011A515D9C005CA994 /* examples */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B3021A515D9C005CA994 /* prism-apacheconf.html */,
-				1F20B3031A515D9C005CA994 /* prism-applescript.html */,
-				1F20B3041A515D9C005CA994 /* prism-aspnet.html */,
-				1F20B3051A515D9C005CA994 /* prism-bash.html */,
-				1F20B3061A515D9C005CA994 /* prism-c.html */,
-				1F20B3071A515D9C005CA994 /* prism-coffeescript.html */,
-				1F20B3081A515D9C005CA994 /* prism-cpp.html */,
-				1F20B3091A515D9C005CA994 /* prism-css.html */,
-				1F20B30A1A515D9C005CA994 /* prism-dart.html */,
-				1F20B30B1A515D9C005CA994 /* prism-erlang.html */,
-				1F20B30C1A515D9C005CA994 /* prism-fortran.html */,
-				1F20B30D1A515D9C005CA994 /* prism-git.html */,
-				1F20B30E1A515D9C005CA994 /* prism-go.html */,
-				1F20B30F1A515D9C005CA994 /* prism-haml.html */,
-				1F20B3101A515D9C005CA994 /* prism-handlebars.html */,
-				1F20B3111A515D9C005CA994 /* prism-http.html */,
-				1F20B3121A515D9C005CA994 /* prism-ini.html */,
-				1F20B3131A515D9C005CA994 /* prism-jade.html */,
-				1F20B3141A515D9C005CA994 /* prism-javascript.html */,
-				1F20B3151A515D9C005CA994 /* prism-latex.html */,
-				1F20B3161A515D9C005CA994 /* prism-less.html */,
-				1F20B3171A515D9C005CA994 /* prism-lolcode.html */,
-				1F20B3181A515D9C005CA994 /* prism-markup.html */,
-				1F20B3191A515D9C005CA994 /* prism-matlab.html */,
-				1F20B31A1A515D9C005CA994 /* prism-perl.html */,
-				1F20B31B1A515D9C005CA994 /* prism-php.html */,
-				1F20B31C1A515D9C005CA994 /* prism-python.html */,
-				1F20B31D1A515D9C005CA994 /* prism-ruby.html */,
-				1F20B31E1A515D9C005CA994 /* prism-rust.html */,
-				1F20B31F1A515D9C005CA994 /* prism-scheme.html */,
-				1F20B3201A515D9C005CA994 /* prism-sql.html */,
-				1F20B3211A515D9C005CA994 /* prism-swift.html */,
-				1F20B3221A515D9C005CA994 /* prism-twig.html */,
-			);
-			path = examples;
-			sourceTree = "<group>";
-		};
-		1F20B3291A515D9C005CA994 /* img */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B32A1A515D9C005CA994 /* logo-ala.png */,
-				1F20B32B1A515D9C005CA994 /* logo-css-tricks.png */,
-				1F20B32C1A515D9C005CA994 /* logo-mdn.png */,
-				1F20B32D1A515D9C005CA994 /* logo-smashing.png */,
-				1F20B32E1A515D9C005CA994 /* logo-typeplate.png */,
-				1F20B32F1A515D9C005CA994 /* logo-wpd.png */,
-				1F20B3301A515D9C005CA994 /* spectrum.png */,
-			);
-			path = img;
-			sourceTree = "<group>";
-		};
-		1F20B3341A515D9C005CA994 /* plugins */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B3351A515D9C005CA994 /* autolinker */,
-				1F20B33A1A515D9C005CA994 /* file-highlight */,
-				1F20B33E1A515D9C005CA994 /* ie8 */,
-				1F20B3431A515D9C005CA994 /* index.html */,
-				1F20B3441A515D9C005CA994 /* line-highlight */,
-				1F20B3491A515D9C005CA994 /* line-numbers */,
-				1F20B34E1A515D9C005CA994 /* show-invisibles */,
-				1F20B3531A515D9C005CA994 /* show-language */,
-				1F20B3591A515D9C005CA994 /* wpd */,
-			);
-			path = plugins;
-			sourceTree = "<group>";
-		};
-		1F20B3351A515D9C005CA994 /* autolinker */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B3361A515D9C005CA994 /* index.html */,
-				1F20B3371A515D9C005CA994 /* prism-autolinker.css */,
-				1F20B3381A515D9C005CA994 /* prism-autolinker.js */,
-				1F20B3391A515D9C005CA994 /* prism-autolinker.min.js */,
-			);
-			path = autolinker;
-			sourceTree = "<group>";
-		};
-		1F20B33A1A515D9C005CA994 /* file-highlight */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B33B1A515D9C005CA994 /* index.html */,
-				1F20B33C1A515D9C005CA994 /* prism-file-highlight.js */,
-				1F20B33D1A515D9C005CA994 /* prism-file-highlight.min.js */,
-			);
-			path = "file-highlight";
-			sourceTree = "<group>";
-		};
-		1F20B33E1A515D9C005CA994 /* ie8 */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B33F1A515D9C005CA994 /* index.html */,
-				1F20B3401A515D9C005CA994 /* prism-ie8.css */,
-				1F20B3411A515D9C005CA994 /* prism-ie8.js */,
-				1F20B3421A515D9C005CA994 /* prism-ie8.min.js */,
-			);
-			path = ie8;
-			sourceTree = "<group>";
-		};
-		1F20B3441A515D9C005CA994 /* line-highlight */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B3451A515D9C005CA994 /* index.html */,
-				1F20B3461A515D9C005CA994 /* prism-line-highlight.css */,
-				1F20B3471A515D9C005CA994 /* prism-line-highlight.js */,
-				1F20B3481A515D9C005CA994 /* prism-line-highlight.min.js */,
-			);
-			path = "line-highlight";
-			sourceTree = "<group>";
-		};
-		1F20B3491A515D9C005CA994 /* line-numbers */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B34A1A515D9C005CA994 /* index.html */,
-				1F20B34B1A515D9C005CA994 /* prism-line-numbers.css */,
-				1F20B34C1A515D9C005CA994 /* prism-line-numbers.js */,
-				1F20B34D1A515D9C005CA994 /* prism-line-numbers.min.js */,
-			);
-			path = "line-numbers";
-			sourceTree = "<group>";
-		};
-		1F20B34E1A515D9C005CA994 /* show-invisibles */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B34F1A515D9C005CA994 /* index.html */,
-				1F20B3501A515D9C005CA994 /* prism-show-invisibles.css */,
-				1F20B3511A515D9C005CA994 /* prism-show-invisibles.js */,
-				1F20B3521A515D9C005CA994 /* prism-show-invisibles.min.js */,
-			);
-			path = "show-invisibles";
-			sourceTree = "<group>";
-		};
-		1F20B3531A515D9C005CA994 /* show-language */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B3541A515D9C005CA994 /* index.html */,
-				1F20B3551A515D9C005CA994 /* prism-show-language.css */,
-				1F20B3561A515D9C005CA994 /* prism-show-language.js */,
-				1F20B3571A515D9C005CA994 /* prism-show-language.min.css */,
-				1F20B3581A515D9C005CA994 /* prism-show-language.min.js */,
-			);
-			path = "show-language";
-			sourceTree = "<group>";
-		};
-		1F20B3591A515D9C005CA994 /* wpd */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B35A1A515D9C005CA994 /* index.html */,
-				1F20B35B1A515D9C005CA994 /* prism-wpd.css */,
-				1F20B35C1A515D9C005CA994 /* prism-wpd.js */,
-				1F20B35D1A515D9C005CA994 /* prism-wpd.min.js */,
-			);
-			path = wpd;
-			sourceTree = "<group>";
-		};
-		1F20B3611A515D9D005CA994 /* templates */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B3621A515D9D005CA994 /* footer.html */,
-				1F20B3631A515D9D005CA994 /* header-download.html */,
-				1F20B3641A515D9D005CA994 /* header-main.html */,
-				1F20B3651A515D9D005CA994 /* header-plugins.html */,
-			);
-			path = templates;
-			sourceTree = "<group>";
-		};
-		1F20B3671A515D9D005CA994 /* themes */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B3681A515D9D005CA994 /* prism-coy.css */,
-				1F20B3691A515D9D005CA994 /* prism-dark.css */,
-				1F20B36A1A515D9D005CA994 /* prism-funky.css */,
-				1F20B36B1A515D9D005CA994 /* prism-okaidia.css */,
-				1F20B36C1A515D9D005CA994 /* prism-tomorrow.css */,
-				1F20B36D1A515D9D005CA994 /* prism-twilight.css */,
-				1F20B36E1A515D9D005CA994 /* prism.css */,
-			);
-			path = themes;
-			sourceTree = "<group>";
-		};
-		1F20B3701A515D9D005CA994 /* vendor */ = {
-			isa = PBXGroup;
-			children = (
-				1F20B3711A515D9D005CA994 /* promise.js */,
-			);
-			path = vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -700,7 +143,6 @@
 				1F20B25F1A51551D005CA994 /* Sources */,
 				1F20B2601A51551D005CA994 /* Frameworks */,
 				1F20B2611A51551D005CA994 /* Headers */,
-				1F20B44A1A515E1C005CA994 /* ShellScript */,
 				1FF357951A515E2F00EB707E /* Resources */,
 			);
 			buildRules = (
@@ -770,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FF357971A519D6B00EB707E /* prism in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,28 +219,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FF357961A515E3A00EB707E /* prism in Resources */,
+				1FF358081A52589800EB707E /* themes in Resources */,
+				1FF358061A52588D00EB707E /* components in Resources */,
+				1FF3580A1A52589F00EB707E /* components.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1F20B44A1A515E1C005CA994 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "SOURCE=$PWD/Dependency/prism\nTARGET=$PWD/Prism/prism\ncp -r $SOURCE/components $TARGET\ncp -r $SOURCE/themes $TARGET\ncp -r $SOURCE/components.js $TARGET";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F20B25F1A51551D005CA994 /* Sources */ = {

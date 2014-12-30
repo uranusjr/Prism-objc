@@ -16,12 +16,6 @@ NS_INLINE NSURL *PRIGetResourceURL(NSString *name)
     return URL;
 }
 
-NS_INLINE NSURL *PRIGetPrismResourceURL(NSString *name)
-{
-    name = [@"prism/" stringByAppendingString:name];
-    return PRIGetResourceURL(name);
-}
-
 NS_INLINE NSData *PRIDataWithJavaScriptString(JSStringRef jsstr)
 {
     if (!jsstr)
@@ -140,7 +134,7 @@ NS_INLINE void PRIJSObjectSetPropertyString(
     if (loadDefaultAliases)
         [self addAliases:[[self class] defaultAliases]];
     _context = JSGlobalContextCreate(NULL);
-    [self runFile:PRIGetPrismResourceURL(@"components.js") error:NULL];
+    [self runFile:PRIGetResourceURL(@"components.js") error:NULL];
     [self initializePrism];
 
     return self;
@@ -248,7 +242,7 @@ NS_INLINE void PRIJSObjectSetPropertyString(
 
     // Load prism-core.
     NSString *corePath = components[@"core"][@"meta"][@"path"];
-    [self runFile:PRIGetPrismResourceURL(corePath) error:NULL];
+    [self runFile:PRIGetResourceURL(corePath) error:NULL];
 
     // Load languages into global context.
     NSDictionary *languages = components[@"languages"];
@@ -286,7 +280,7 @@ NS_INLINE void PRIJSObjectSetPropertyString(
             continue;
 
         NSAssert(name.length, @"This should be a valid string");
-        NSURL *url = PRIGetPrismResourceURL(path);
+        NSURL *url = PRIGetResourceURL(path);
         themes[name] = url;
     }
     _themes = [themes copy];
@@ -313,14 +307,14 @@ NS_INLINE void PRIJSObjectSetPropertyString(
     NSString *filename = [name stringByAppendingString:@".min.js"];
     NSString *path = [pathMeta stringByReplacingOccurrencesOfString:@"{id}"
                                                          withString:filename];
-    [self runFile:PRIGetPrismResourceURL(path) error:&error];
+    [self runFile:PRIGetResourceURL(path) error:&error];
     if (error)
     {
         // Try development version. Give up if this fails too.
         filename = [name stringByAppendingString:@".js"];
         path = [pathMeta stringByReplacingOccurrencesOfString:@"{id}"
                                                    withString:filename];
-        [self runFile:PRIGetPrismResourceURL(path) error:NULL];
+        [self runFile:PRIGetResourceURL(path) error:NULL];
         [loaded addObject:name];
     }
     [loaded addObject:name];
