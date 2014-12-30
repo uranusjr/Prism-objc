@@ -12,6 +12,8 @@
 NS_INLINE NSURL *PRIGetResourceURL(NSString *name)
 {
     NSBundle *bundle = [NSBundle bundleForClass:[PRISyntaxHighlighter class]];
+    bundle = [NSBundle bundleWithURL:[bundle URLForResource:@"Prism"
+                                              withExtension:@"bundle"]];
     NSURL *URL = [bundle URLForResource:name withExtension:@""];
     return URL;
 }

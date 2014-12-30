@@ -13,9 +13,8 @@
 		1F20B2821A515570005CA994 /* PRISyntaxHighlighter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F20B2801A515570005CA994 /* PRISyntaxHighlighter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F20B2831A515570005CA994 /* PRISyntaxHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F20B2811A515570005CA994 /* PRISyntaxHighlighter.m */; };
 		1F20B2891A515B12005CA994 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F20B2881A515B12005CA994 /* JavaScriptCore.framework */; };
-		1FF358061A52588D00EB707E /* components in Resources */ = {isa = PBXBuildFile; fileRef = 1FF358051A52588D00EB707E /* components */; };
-		1FF358081A52589800EB707E /* themes in Resources */ = {isa = PBXBuildFile; fileRef = 1FF358071A52589800EB707E /* themes */; };
-		1FF3580A1A52589F00EB707E /* components.js in Resources */ = {isa = PBXBuildFile; fileRef = 1FF358091A52589F00EB707E /* components.js */; };
+		1F8AF29A1A527DBD005FB2AA /* Prism.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F8AF2991A527DBD005FB2AA /* Prism.bundle */; };
+		1F8AF29B1A527DBD005FB2AA /* Prism.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F8AF2991A527DBD005FB2AA /* Prism.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +37,7 @@
 		1F20B2801A515570005CA994 /* PRISyntaxHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRISyntaxHighlighter.h; sourceTree = "<group>"; };
 		1F20B2811A515570005CA994 /* PRISyntaxHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRISyntaxHighlighter.m; sourceTree = "<group>"; };
 		1F20B2881A515B12005CA994 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		1FF358051A52588D00EB707E /* components */ = {isa = PBXFileReference; lastKnownFileType = folder; name = components; path = Dependency/prism/components; sourceTree = SOURCE_ROOT; };
-		1FF358071A52589800EB707E /* themes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = themes; path = Dependency/prism/themes; sourceTree = SOURCE_ROOT; };
-		1FF358091A52589F00EB707E /* components.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = components.js; path = Dependency/prism/components.js; sourceTree = SOURCE_ROOT; };
+		1F8AF2991A527DBD005FB2AA /* Prism.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Prism.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +92,8 @@
 		1F20B2671A51551D005CA994 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F8AF2991A527DBD005FB2AA /* Prism.bundle */,
 				1F20B2681A51551D005CA994 /* Info.plist */,
-				1FF358091A52589F00EB707E /* components.js */,
-				1FF358051A52588D00EB707E /* components */,
-				1FF358071A52589800EB707E /* themes */,
 				1F20B2881A515B12005CA994 /* JavaScriptCore.framework */,
 			);
 			name = "Supporting Files";
@@ -143,6 +138,7 @@
 				1F20B25F1A51551D005CA994 /* Sources */,
 				1F20B2601A51551D005CA994 /* Frameworks */,
 				1F20B2611A51551D005CA994 /* Headers */,
+				1F8AF29C1A527DC9005FB2AA /* Sync Prism Resources */,
 				1FF357951A515E2F00EB707E /* Resources */,
 			);
 			buildRules = (
@@ -212,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F8AF29B1A527DBD005FB2AA /* Prism.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,13 +216,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FF358081A52589800EB707E /* themes in Resources */,
-				1FF358061A52588D00EB707E /* components in Resources */,
-				1FF3580A1A52589F00EB707E /* components.js in Resources */,
+				1F8AF29A1A527DBD005FB2AA /* Prism.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F8AF29C1A527DC9005FB2AA /* Sync Prism Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Sync Prism Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp Dependency/prism/components.js Prism/Prism.bundle\ncp -r Dependency/prism/components Prism/Prism.bundle\ncp -r Dependency/prism/themes Prism/Prism.bundle";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F20B25F1A51551D005CA994 /* Sources */ = {

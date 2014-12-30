@@ -17,6 +17,9 @@ DerivedData
 *.ipa
 *.xcuserstate
 
+# Synced in build script via submodule.
+Prism/Prism/Prism.bundle/
+
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
