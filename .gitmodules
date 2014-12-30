@@ -1,0 +1,3 @@
+[submodule "Prism/Dependency/prism"]
+	path = Prism/Dependency/prism
+	url = https://github.com/LeaVerou/prism.git
