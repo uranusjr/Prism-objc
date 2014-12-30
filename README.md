@@ -29,7 +29,7 @@ The language names you pass into when you perform highlighting need to be one of
 1. A built-in definition returned by `-syntaxNames`.
 2. One of the language aliases returned by `-aliases`.
 
-You can add/remove aliases using `-addAlias:forName:`, `-addAliases:`, and `-removeAlias:`. An alias should point to a built-in language name, or another alias.
+You can add/remove aliases using `-addAlias:forName:`, `-addAliasesFromDictionary:`, and `-removeAlias:`. An alias should point to a built-in language name, or another alias.
 
 A set of recommended aliases is provided via `+defaultAliases`. Note that they are *not* loaded if you use `init` to initialise `PRISyntaxHighlighter`.
 

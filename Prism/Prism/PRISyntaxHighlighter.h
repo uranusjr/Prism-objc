@@ -23,7 +23,7 @@
 @property (assign, readonly) JSGlobalContextRef context;
 
 - (void)addAlias:(NSString *)alias forName:(NSString *)target;
-- (void)addAliases:(NSDictionary *)aliases;
+- (void)addAliasesFromDictionary:(NSDictionary *)aliases;
 - (void)removeAlias:(NSString *)alias;
 
 - (NSString *)resolve:(NSString *)aliasOrName;

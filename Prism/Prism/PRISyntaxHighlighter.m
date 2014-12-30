@@ -134,7 +134,7 @@ NS_INLINE void PRIJSObjectSetPropertyString(
 
     _aliases = [[NSMutableDictionary alloc] init];
     if (loadDefaultAliases)
-        [self addAliases:[[self class] defaultAliases]];
+        [self addAliasesFromDictionary:[[self class] defaultAliases]];
     _context = JSGlobalContextCreate(NULL);
     [self runFile:PRIGetResourceURL(@"components.js") error:NULL];
     [self initializePrism];
@@ -159,7 +159,7 @@ NS_INLINE void PRIJSObjectSetPropertyString(
     _aliases[alias] = target;
 }
 
-- (void)addAliases:(NSDictionary *)aliases
+- (void)addAliasesFromDictionary:(NSDictionary *)aliases
 {
     [_aliases addEntriesFromDictionary:aliases];
 }

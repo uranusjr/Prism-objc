@@ -27,8 +27,8 @@
     if (!self)
         return nil;
 
-    self.highlighter = [[PRISyntaxHighlighter alloc] init];
-    [self.highlighter addAliases:[PRISyntaxHighlighter defaultAliases]];
+    self.highlighter =
+        [[PRISyntaxHighlighter alloc] initWithDefaultAliases:YES];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.selectedLanguage = [defaults objectForKey:@"selectedLanguage"];
