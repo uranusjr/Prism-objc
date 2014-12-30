@@ -6,7 +6,7 @@ Objective-C Wrapper for Prism (the JavaScript syntax highlighter) using JavaScri
 
 [Prism] is a “lightweight, robust, elegant syntax highlighting library” that renders code snippets into syntax highlighted HTML. It is created by [Lea Verou], written in JavaScript, and is based on regular expression.
 
-This library/framework uses JavaScriptCore to perform so-called “server-side rendering” with Prism. It supports most modern OS X versions (I’m not very sure how far back this goes, but at least 10.7+ should be fine) and iOS 7 or later.
+This library/framework uses [JavaScriptCore] to perform so-called “server-side rendering” with Prism. It supports most modern OS X versions (I’m not very sure how far back this goes, but at least 10.7+ should be fine) and iOS 7 or later.
 
 ## How?
 
@@ -43,6 +43,14 @@ There’s a demo project in the `PrismDemo` directory showing what this library 
 
 ![PrismDemo highlighting PRISyntaxHighlighter API](http://d.pr/i/15v8Z+)
 
+## Installing
+
+This repository can build as an OS X framework that you can use directly. Alternatively you can also install via [CocoaPods]:
+
+    pod install Prism
+
+Since the original Prism needs to be bundled with the main application, I don’t recommend you just try to include this as a submodule or even copy-paste the code. You will need to structure your project very carefully so that resources can be found correctly. It can work, but you’ll waste a lot of time to this.
+
 ## TODO
 
 * Support built-in Prism plugins.
@@ -51,3 +59,5 @@ There’s a demo project in the `PrismDemo` directory showing what this library 
 
 [Prism]: http://prismjs.com/
 [Lea Verou]: http://lea.verou.me/
+[JavaScriptCore]: https://www.webkit.org/projects/javascript/
+[CocoaPods]: http://cocoapods.org/
