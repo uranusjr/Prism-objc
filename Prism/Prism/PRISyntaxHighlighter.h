@@ -12,6 +12,7 @@
 
 + (NSDictionary *)defaultAliases;
 
+- (instancetype)initWithDefaultAliases:(BOOL)loadDefaultAliases;
 - (instancetype)init;
 - (void)dealloc;
 

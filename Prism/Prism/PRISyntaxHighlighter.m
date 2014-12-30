@@ -130,18 +130,25 @@ NS_INLINE void PRIJSObjectSetPropertyString(
     return aliasMap;
 }
 
-- (instancetype)init
+- (instancetype)initWithDefaultAliases:(BOOL)loadDefaultAliases
 {
     self = [super init];
     if (!self)
         return nil;
 
     _aliases = [[NSMutableDictionary alloc] init];
+    if (loadDefaultAliases)
+        [self addAliases:[[self class] defaultAliases]];
     _context = JSGlobalContextCreate(NULL);
     [self runFile:PRIGetPrismResourceURL(@"components.js") error:NULL];
     [self initializePrism];
 
     return self;
+}
+
+- (instancetype)init
+{
+    return [self initWithDefaultAliases:NO];
 }
 
 - (void)dealloc
@@ -168,7 +175,9 @@ NS_INLINE void PRIJSObjectSetPropertyString(
 
 - (NSString *)resolve:(NSString *)aliasOrName
 {
-    NSString *name = self.aliases[aliasOrName];
+    NSString *name = aliasOrName;
+    while (self.aliases[name])
+        name = self.aliases[name];
     return name ? name : aliasOrName;
 }
 
