@@ -259,6 +259,21 @@ NS_INLINE NSDictionary *PRIInitializeThemes(
     _context = NULL;
 }
 
+- (instancetype)copyWithZone:(NSZone *)zone
+{
+    PRISyntaxHighlighter *copied =
+        [[PRISyntaxHighlighter allocWithZone:zone] init];
+
+    // _context can't be copied; we'll need to find a way to re-run external
+    // plugins when we implement this.
+    // _languages and _themes work similarly: if we add functionality to allow
+    // user load external definitions we'll need to find a way to inject them
+    // here (and obviously we also need to update _context).
+    copied->_aliases = _aliases;
+
+    return copied;
+}
+
 - (void)addAlias:(NSString *)alias forName:(NSString *)target
 {
     _aliases[alias] = target;

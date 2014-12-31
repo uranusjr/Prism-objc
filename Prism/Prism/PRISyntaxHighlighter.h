@@ -9,11 +9,13 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 
 
-@interface PRISyntaxHighlighter : NSObject
+@interface PRISyntaxHighlighter : NSObject <NSCopying>
 
 + (NSDictionary *)defaultAliases;
 
+// Designated initializer.
 - (instancetype)initWithDefaultAliases:(BOOL)loadDefaultAliases;
+
 - (instancetype)init;
 - (void)dealloc;
 
