@@ -8,6 +8,7 @@
 
 #import <JavaScriptCore/JavaScriptCore.h>
 
+
 @interface PRISyntaxHighlighter : NSObject
 
 + (NSDictionary *)defaultAliases;

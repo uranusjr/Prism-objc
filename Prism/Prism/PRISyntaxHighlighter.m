@@ -93,6 +93,104 @@ NS_INLINE void PRIJSObjectSetPropertyString(
         JSStringRelease(string);
 }
 
+NS_INLINE void PRIRunFile(
+    JSContextRef ctx, NSURL *URL, NSError *__autoreleasing *error)
+{
+    NSString *code = [NSString stringWithContentsOfURL:URL
+                                              encoding:NSUTF8StringEncoding
+                                                 error:error];
+    if (!code)
+        return;
+    if (!code.length)
+        return;
+
+    JSStringRef js = JSStringCreateWithCFString((__bridge CFStringRef)code);
+    JSEvaluateScript(ctx, js, NULL, NULL, 0, NULL);
+    JSStringRelease(js);
+}
+
+NS_INLINE void PRILoadLanguage(
+    JSContextRef ctx, NSString *name, NSDictionary *langs,
+    NSMutableDictionary *loaded)
+{
+    if (loaded[name])
+        return;
+
+    // Load dependencies first.
+    NSDictionary *lang = langs[name];
+    if (lang[@"require"])
+        PRILoadLanguage(ctx, lang[@"require"], langs, loaded);
+
+    NSString *pathMeta = langs[@"meta"][@"path"];
+    NSError *error = nil;
+
+    // Try minified version first.
+    NSString *filename = [name stringByAppendingString:@".min.js"];
+    NSString *path = [pathMeta stringByReplacingOccurrencesOfString:@"{id}"
+                                                         withString:filename];
+    PRIRunFile(ctx, PRIGetResourceURL(path), &error);
+    if (error)
+    {
+        // Try development version. Give up if this fails too.
+        filename = [name stringByAppendingString:@".js"];
+        path = [pathMeta stringByReplacingOccurrencesOfString:@"{id}"
+                                                   withString:filename];
+        PRIRunFile(ctx, PRIGetResourceURL(path), NULL);
+    }
+    loaded[name] = lang[@"title"];
+}
+
+NS_INLINE NSDictionary *PRIInitializeLanguages(
+    JSContextRef ctx, NSDictionary *components)
+{
+    // Load prism-core.
+    NSString *corePath = components[@"core"][@"meta"][@"path"];
+    PRIRunFile(ctx, PRIGetResourceURL(corePath), NULL);
+
+    // Load languages into global context.
+    NSDictionary *languages = components[@"languages"];
+    NSMutableDictionary *loadedLanguages = [[NSMutableDictionary alloc] init];
+
+    loadedLanguages[@"meta"] = [NSNull null];
+    for (NSString *name in languages)
+        PRILoadLanguage(ctx, name, languages, loadedLanguages);
+    [loadedLanguages removeObjectForKey:@"meta"];
+
+    return [loadedLanguages copy];
+}
+
+NS_INLINE NSDictionary *PRIInitializeThemes(
+    JSContextRef ctx, NSDictionary *components)
+{
+    NSDictionary *themeInfos = components[@"themes"];
+    NSMutableDictionary *themes =
+        [[NSMutableDictionary alloc] initWithCapacity:themeInfos.count];
+    NSString *pathMeta = themeInfos[@"meta"][@"path"];
+    for (NSString *key in themeInfos)
+    {
+        NSString *name;
+        id themeInfo = themeInfos[key];
+        NSString *path = [pathMeta stringByReplacingOccurrencesOfString:@"{id}"
+                                                             withString:key];
+
+        // Theme key-name mapping. Example: "prism-funky": "Funky".
+        if ([themeInfo isKindOfClass:[NSString class]])
+            name = themeInfo;
+        // Theme key-info mapping. Example:
+        // "prism": {"title": "Default", "option": "default"}
+        else if (themeInfo[@"title"])
+            name = themeInfo[@"title"];
+        // This shouldn't really happen, but if it does we just ignore it.
+        else
+            continue;
+
+        NSCAssert(name.length, @"This should be a valid string");
+        NSURL *url = PRIGetResourceURL(path);
+        themes[name] = url;
+    }
+    return [themes copy];
+}
+
 
 @implementation PRISyntaxHighlighter
 {
@@ -136,8 +234,15 @@ NS_INLINE void PRIJSObjectSetPropertyString(
     if (loadDefaultAliases)
         [self addAliasesFromDictionary:[[self class] defaultAliases]];
     _context = JSGlobalContextCreate(NULL);
-    [self runFile:PRIGetResourceURL(@"components.js") error:NULL];
-    [self initializePrism];
+    PRIRunFile(_context, PRIGetResourceURL(@"components.js"), NULL);
+
+    JSObjectRef globalObject = JSContextGetGlobalObject(_context);
+    JSValueRef value = PRIJSObjectGetProperty(
+        _context, globalObject, "components");
+    NSDictionary *components = PRIObjectWithJavaScriptValue(_context, value);
+
+    _languages = PRIInitializeLanguages(_context, components);
+    _themes = PRIInitializeThemes(_context, components);
 
     return self;
 }
@@ -215,110 +320,6 @@ NS_INLINE void PRIJSObjectSetPropertyString(
 
     NSString *str = PRIStringWithJavaScriptValue(ctx, returnValue);
     return str;
-}
-
-
-#pragma mark - Private
-
-- (void)runFile:(NSURL *)URL error:(NSError *__autoreleasing *)error
-{
-    NSString *code = [NSString stringWithContentsOfURL:URL
-                                              encoding:NSUTF8StringEncoding
-                                                 error:error];
-    if (!code)
-        return;
-    if (!code.length)
-        return;
-
-    JSStringRef js = JSStringCreateWithCFString((__bridge CFStringRef)code);
-    JSEvaluateScript(_context, js, NULL, NULL, 0, NULL);
-    JSStringRelease(js);
-}
-
-- (void)initializePrism
-{
-    JSContextRef ctx = _context;
-    JSObjectRef globalObject = JSContextGetGlobalObject(ctx);
-    JSValueRef value = PRIJSObjectGetProperty(ctx, globalObject, "components");
-    NSDictionary *components = PRIObjectWithJavaScriptValue(ctx, value);
-
-    // Load prism-core.
-    NSString *corePath = components[@"core"][@"meta"][@"path"];
-    [self runFile:PRIGetResourceURL(corePath) error:NULL];
-
-    // Load languages into global context.
-    NSDictionary *languages = components[@"languages"];
-    NSMutableDictionary *loadedLanguages =
-        [NSMutableDictionary dictionaryWithObject:[NSNull null] forKey:@"meta"];
-    for (NSString *name in languages)
-    {
-        [self loadLanguageWithName:name inDictionary:languages
-                        dependency:loadedLanguages];
-    }
-    [loadedLanguages removeObjectForKey:@"meta"];
-    _languages = [loadedLanguages copy];
-
-    // Load theme information.
-    NSDictionary *themeInfos = components[@"themes"];
-    NSMutableDictionary *themes =
-        [NSMutableDictionary dictionaryWithCapacity:themeInfos.count];
-    NSString *pathMeta = themeInfos[@"meta"][@"path"];
-    for (NSString *key in themeInfos)
-    {
-        NSString *name;
-        id themeInfo = themeInfos[key];
-        NSString *path = [pathMeta stringByReplacingOccurrencesOfString:@"{id}"
-                                                             withString:key];
-
-        // Theme key-name mapping. Example: "prism-funky": "Funky".
-        if ([themeInfo isKindOfClass:[NSString class]])
-            name = themeInfo;
-        // Theme key-info mapping. Example:
-        // "prism": {"title": "Default", "option": "default"}
-        else if (themeInfo[@"title"])
-            name = themeInfo[@"title"];
-        // This shouldn't really happen, but if it does we just ignore it.
-        else
-            continue;
-
-        NSAssert(name.length, @"This should be a valid string");
-        NSURL *url = PRIGetResourceURL(path);
-        themes[name] = url;
-    }
-    _themes = [themes copy];
-}
-
-- (void)loadLanguageWithName:(NSString *)name inDictionary:(NSDictionary *)langs
-                  dependency:(NSMutableDictionary *)loaded
-{
-    if (loaded[name])
-        return;
-
-    // Load dependencies first.
-    NSDictionary *lang = langs[name];
-    if (lang[@"require"])
-    {
-        [self loadLanguageWithName:lang[@"require"] inDictionary:langs
-                        dependency:loaded];
-    }
-
-    NSString *pathMeta = langs[@"meta"][@"path"];
-    NSError *error = nil;
-
-    // Try minified version first.
-    NSString *filename = [name stringByAppendingString:@".min.js"];
-    NSString *path = [pathMeta stringByReplacingOccurrencesOfString:@"{id}"
-                                                         withString:filename];
-    [self runFile:PRIGetResourceURL(path) error:&error];
-    if (error)
-    {
-        // Try development version. Give up if this fails too.
-        filename = [name stringByAppendingString:@".js"];
-        path = [pathMeta stringByReplacingOccurrencesOfString:@"{id}"
-                                                   withString:filename];
-        [self runFile:PRIGetResourceURL(path) error:NULL];
-    }
-    loaded[name] = lang[@"title"];
 }
 
 @end
