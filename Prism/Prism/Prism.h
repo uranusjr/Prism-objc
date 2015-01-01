@@ -7,5 +7,6 @@
 //
 
 //! Public headers go here...
+#import <Prism/PRIPlugIn.h>
 #import <Prism/PRISyntaxHighlighter.h>
 

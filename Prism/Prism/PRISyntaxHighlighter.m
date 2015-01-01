@@ -7,7 +7,10 @@
 //
 
 #import "PRISyntaxHighlighter.h"
+#import "PRIPlugIn.h"
 
+
+#pragma mark - Cocoa Extensions
 
 NS_INLINE NSURL *PRIGetResourceURL(NSString *name)
 {
@@ -17,6 +20,9 @@ NS_INLINE NSURL *PRIGetResourceURL(NSString *name)
     NSURL *URL = [bundle URLForResource:name withExtension:@""];
     return URL;
 }
+
+
+#pragma mark - JavaScriptCore Extensions
 
 NS_INLINE NSData *PRIDataWithJavaScriptString(JSStringRef jsstr)
 {
@@ -93,6 +99,9 @@ NS_INLINE void PRIJSObjectSetPropertyString(
         JSStringRelease(string);
 }
 
+
+#pragma mark - Helpers
+
 NS_INLINE void PRIRunFile(
     JSContextRef ctx, NSURL *URL, NSError *__autoreleasing *error)
 {
@@ -108,6 +117,25 @@ NS_INLINE void PRIRunFile(
     JSEvaluateScript(ctx, js, NULL, NULL, 0, NULL);
     JSStringRelease(js);
 }
+
+NS_INLINE NSDictionary *PRIGetComponents()
+{
+    static NSDictionary *components = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        JSGlobalContextRef ctx = JSGlobalContextCreate(NULL);
+        PRIRunFile(ctx, PRIGetResourceURL(@"components.js"), NULL);
+
+        JSObjectRef global = JSContextGetGlobalObject(ctx);
+        JSValueRef value = PRIJSObjectGetProperty(ctx, global, "components");
+        components = PRIObjectWithJavaScriptValue(ctx, value);
+
+        JSGlobalContextRelease(ctx);
+    });
+
+    return components;
+}
+
 
 NS_INLINE void PRILoadLanguage(
     JSContextRef ctx, NSString *name, NSDictionary *langs,
@@ -191,9 +219,16 @@ NS_INLINE NSDictionary *PRIInitializeThemes(
     return [themes copy];
 }
 
+NS_INLINE NSSet *PRIAllowedPlugins()
+{
+    return [NSSet setWithObjects:
+            @"line-highlight", @"line-numbers", @"show-invisibles", nil];
+}
+
 
 @implementation PRISyntaxHighlighter
 {
+    NSMutableArray *_plugIns;
     NSMutableDictionary *_aliases;
     JSGlobalContextRef _context;
 }
@@ -224,23 +259,51 @@ NS_INLINE NSDictionary *PRIInitializeThemes(
     return aliasMap;
 }
 
++ (NSDictionary *)builtInPlugIns
+{
+    static NSDictionary *plugInMap = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSDictionary *plugInInfos = PRIGetComponents()[@"plugins"];
+        NSString *pathMeta = plugInInfos[@"meta"][@"path"];
+        NSMutableDictionary *plugins = [[NSMutableDictionary alloc] init];
+        for (NSString *key in PRIAllowedPlugins())
+        {
+            id info = plugInInfos[key];
+            NSString *name = info;
+            if ([info isKindOfClass:[NSDictionary class]])
+                name = info[@"title"];
+            NSString *path =
+                [pathMeta stringByReplacingOccurrencesOfString:@"{id}"
+                                                    withString:key];
+            NSURL *js =
+                PRIGetResourceURL([path stringByAppendingString:@".js"]);
+            NSURL *css = nil;
+            if (![info isKindOfClass:[NSDictionary class]]
+                    || ![info[@"noCSS"] booleanValue])
+                css = PRIGetResourceURL([path stringByAppendingString:@".css"]);
+            PRIPlugIn *plugIn = [[PRIPlugIn alloc] initWithName:name
+                                                     javaScript:js CSS:css];
+            plugins[key] = plugIn;
+        }
+        plugInMap = [plugins copy];
+    });
+    return plugInMap;
+}
+
 - (instancetype)initWithDefaultAliases:(BOOL)loadDefaultAliases
 {
     self = [super init];
     if (!self)
         return nil;
 
+    _plugIns = [[NSMutableArray alloc] init];
     _aliases = [[NSMutableDictionary alloc] init];
     if (loadDefaultAliases)
         [self addAliasesFromDictionary:[[self class] defaultAliases]];
     _context = JSGlobalContextCreate(NULL);
-    PRIRunFile(_context, PRIGetResourceURL(@"components.js"), NULL);
 
-    JSObjectRef globalObject = JSContextGetGlobalObject(_context);
-    JSValueRef value = PRIJSObjectGetProperty(
-        _context, globalObject, "components");
-    NSDictionary *components = PRIObjectWithJavaScriptValue(_context, value);
-
+    NSDictionary *components = PRIGetComponents();
     _languages = PRIInitializeLanguages(_context, components);
     _themes = PRIInitializeThemes(_context, components);
 
@@ -272,6 +335,20 @@ NS_INLINE NSDictionary *PRIInitializeThemes(
     copied->_aliases = _aliases;
 
     return copied;
+}
+
+- (BOOL)loadPlugIn:(PRIPlugIn *)plugin error:(NSError *__autoreleasing *)error
+{
+    NSError *e = nil;
+    NSURL *js = plugin.javaScript;
+    if (js)
+        PRIRunFile(_context, js, &e);
+    if (!e)
+        [_plugIns addObject:plugin];
+
+    if (error)
+        *error = e;
+    return !e;  // Return YES (success) if there's no error.
 }
 
 - (void)addAlias:(NSString *)alias forName:(NSString *)target

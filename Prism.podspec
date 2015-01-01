@@ -40,6 +40,7 @@ Pod::Spec.new do |s|
     'Prism' => [
       "Prism/Dependency/prism/components.js",
       "Prism/Dependency/prism/components",
+      "Prism/Dependency/prism/plugins",
       "Prism/Dependency/prism/themes",
     ]
   }

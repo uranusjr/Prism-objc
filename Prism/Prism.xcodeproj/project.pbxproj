@@ -15,6 +15,8 @@
 		1F20B2891A515B12005CA994 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F20B2881A515B12005CA994 /* JavaScriptCore.framework */; };
 		1F8AF29A1A527DBD005FB2AA /* Prism.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F8AF2991A527DBD005FB2AA /* Prism.bundle */; };
 		1F8AF29B1A527DBD005FB2AA /* Prism.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F8AF2991A527DBD005FB2AA /* Prism.bundle */; };
+		1F8AF2A31A53A092005FB2AA /* PRIPlugIn.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F8AF2A11A53A092005FB2AA /* PRIPlugIn.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F8AF2A41A53A092005FB2AA /* PRIPlugIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8AF2A21A53A092005FB2AA /* PRIPlugIn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		1F20B2811A515570005CA994 /* PRISyntaxHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRISyntaxHighlighter.m; sourceTree = "<group>"; };
 		1F20B2881A515B12005CA994 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		1F8AF2991A527DBD005FB2AA /* Prism.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Prism.bundle; sourceTree = "<group>"; };
+		1F8AF2A11A53A092005FB2AA /* PRIPlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRIPlugIn.h; sourceTree = "<group>"; };
+		1F8AF2A21A53A092005FB2AA /* PRIPlugIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRIPlugIn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				1F20B2691A51551D005CA994 /* Prism.h */,
+				1F8AF2A11A53A092005FB2AA /* PRIPlugIn.h */,
+				1F8AF2A21A53A092005FB2AA /* PRIPlugIn.m */,
 				1F20B2801A515570005CA994 /* PRISyntaxHighlighter.h */,
 				1F20B2811A515570005CA994 /* PRISyntaxHighlighter.m */,
 				1F20B2671A51551D005CA994 /* Supporting Files */,
@@ -123,6 +129,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F8AF2A31A53A092005FB2AA /* PRIPlugIn.h in Headers */,
 				1F20B2821A515570005CA994 /* PRISyntaxHighlighter.h in Headers */,
 				1F20B26A1A51551D005CA994 /* Prism.h in Headers */,
 			);
@@ -235,7 +242,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp Dependency/prism/components.js Prism/Prism.bundle\ncp -r Dependency/prism/components Prism/Prism.bundle\ncp -r Dependency/prism/themes Prism/Prism.bundle";
+			shellScript = "cp Dependency/prism/components.js Prism/Prism.bundle\ncp -r Dependency/prism/components Prism/Prism.bundle\ncp -r Dependency/prism/plugins Prism/Prism.bundle\ncp -r Dependency/prism/themes Prism/Prism.bundle";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -244,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F8AF2A41A53A092005FB2AA /* PRIPlugIn.m in Sources */,
 				1F20B2831A515570005CA994 /* PRISyntaxHighlighter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

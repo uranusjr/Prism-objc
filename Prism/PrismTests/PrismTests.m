@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "PRIPlugIn.h"
 #import "PRISyntaxHighlighter.h"
 
 @interface PrismTests : XCTestCase
@@ -38,6 +39,17 @@
     XCTAssertNotEqualObjects(@"<span class=\"token keyword\">int</span> main",
                              output);
     XCTAssertNil(error);
+}
+
+- (void)testBuiltInPlugIns
+{
+    NSDictionary *plugins = [PRISyntaxHighlighter builtInPlugIns];
+    for (PRIPlugIn *plugin in plugins.allValues)
+    {
+        XCTAssertNotNil(plugin.name);
+        XCTAssertNotNil(plugin.javaScript);
+        XCTAssertNotNil(plugin.CSS);
+    }
 }
 
 @end
